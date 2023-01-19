@@ -53,10 +53,8 @@ int main()
 
     //padText(test, length, ' ', 5);
 
-    //setupAndPrint(&refreshData);
-    //printDataTime(0, "UTC");
-    //printDataTime(-7, "MDT");
-    refreshData();
+    setupAndPrint(&refreshData);
+    //refreshData();
     return 0;
 }
 

@@ -128,6 +128,7 @@ void setupAndPrint(Weather (*dataCallback)()) {
         return;
     }
     int counter = 0;
+    int maxShowTimezoneCount = 10;
     Weather weatherInfo = dataCallback();
     while (1) {
         // printCPUTemperature();//print CPU temperature
@@ -137,7 +138,7 @@ void setupAndPrint(Weather (*dataCallback)()) {
             weatherInfo = dataCallback();
         }
         printWeather(weatherInfo);
-        if (counter % 3 == 0) {
+        if ((counter / maxShowTimezoneCount) % 2 == 0) {
             printDataTime(0, "UTC");
         } else {
             printDataTime(-7, "MDT");
