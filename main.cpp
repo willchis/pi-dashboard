@@ -31,9 +31,9 @@ void padText(char text[], int textLength, char padCharacter, int padCount) {
 }
 
 Weather refreshData() {
-    char* appId = getenv("appId");
+    char* appId = getenv("APPID");
     if (appId == NULL) {
-        std::string error = "Weather API key not found in appId env variable";
+        std::string error = "Weather API key not found in APPID env variable";
         std::cout << error << std::endl;
         throw error;
     }

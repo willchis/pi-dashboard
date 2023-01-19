@@ -6,5 +6,14 @@ float kelvin_to_f(float kelvin) {
 
 class Weather {
     public:
-        float temperature;
+        float temperatureF();
+        void setTemperatureK(float temperature) {
+            temperatureK = temperature;
+        }
+    private:
+        float temperatureK;
 };
+
+float Weather::temperatureF() {
+    return (9.0 / 5) * (temperatureK - 273.15) + 32;
+}

@@ -46,7 +46,7 @@ void pad(char *s, int padCount, char padChar) {
 
 void printWeather(Weather weather) {
     lcdPosition(lcdHandle, 0, 0);
-    lcdPrintf(lcdHandle, "Current Temp: %.0fF", weather.temperature);
+    lcdPrintf(lcdHandle, "Current Temp: %.0fF", weather.temperatureF());
 }
 
 void printCPUTemperature() {// sub function used to print CPU temperature

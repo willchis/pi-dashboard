@@ -19,7 +19,6 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *data)
     return realsize;
 }
 
-// TODO return object with weather data
 Weather get_request(std::string url) {
     CURLcode res;
     Weather weather;
@@ -41,10 +40,7 @@ Weather get_request(std::string url) {
             if (data.size() > 0) {
                 nlohmann::json weather_data = nlohmann::json::parse(data);
                 //std::string temperature = weather_data["main"]["temp"];
-                weather.temperature = kelvin_to_f(weather_data["main"]["temp"]);
-                std::cout << weather.temperature << std::endl;
-                printf("%f", weather.temperature);
-
+                weather.setTemperatureK(weather_data["main"]["temp"]);
             }
         }
         curl_easy_cleanup(curl);
